@@ -173,36 +173,84 @@ public class Sketch extends PApplet {
   public void draw_section5(){
     int intX = 0;
     int intY = 0;
-
-    for(int intRow = 1; intRow < 30; intRow++) {
-      for(int intColumn = 30; intColumn > 1; intColumn--) {
+    int counter = 30;
+    for(int intRow = 0; intRow < 30; intRow++) {
+      for(int intColumn = 30; intColumn > counter; intColumn--) {
+      
         intX = 3 + intRow * 300 / 30;  
         intY = 3 + intColumn * 300 / 30; 
-
-
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
 
       }
+      counter--;
     }
   }
 
-  public void draw_section6(){
 
-  }
-
-  public void draw_section7(){
-
-  }
+    
   
-  public void draw_section8(){
+  
 
+  
+  
+
+  public void draw_section6(){
+    int intX = 0;
+    int intY = 0;
+    int counter = 30;
+
+    for(int intColumn = 30; intColumn > 0; intColumn--) {
+      for(int intRow = 0; intRow < counter; intRow++) {
+      
+        intX = 300 + 3 + intRow * 300 / 30;  
+        intY = 3 + intColumn * 300 / 30; 
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+
+      }
+      counter--;
+    }
   }
 
+  
 
+  public void draw_section7() {
+    
+    int intX = 0;
+    int intY = 0;
+    int counter = 30;
 
+    for(int intRow = 0; intRow < 30; intRow++) {
+      for(int intColumn = 0; intColumn < counter; intColumn++) {
+        intX = 600 + 3 + intRow * 300 / 30;  
+        intY = 3 + intColumn * 300 / 30; 
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
 
+        }
+      counter--;
+      }
+    }
 
-
+  
+  
+  public void draw_section8() {
+  
+  }
 }
+
+  
+
+
+  
+
+
+
+
+
+
+
