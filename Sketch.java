@@ -170,32 +170,22 @@ public class Sketch extends PApplet {
   /**
    * Do NOT use 'if' statements to complete 5-8. Manipulate the loops instead
    */
+
   public void draw_section5(){
     int intX = 0;
     int intY = 0;
-    int counter = 30;
-    for(int intRow = 0; intRow < 30; intRow++) {
-      for(int intColumn = 30; intColumn > counter; intColumn--) {
-      
+    int counter = 29;
+    for(int intColumn = 0; intColumn < 31; intColumn++) {
+      for(int intRow = 30; intRow > counter; intRow--) {
         intX = 3 + intRow * 300 / 30;  
-        intY = 3 + intColumn * 300 / 30; 
+        intY = 3 + intColumn * 300 / 30 -10 ; 
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
-
       }
-      counter--;
+    counter--;
     }
   }
-
-
-    
-  
-  
-
-  
-  
-
   public void draw_section6(){
     int intX = 0;
     int intY = 0;
@@ -205,13 +195,13 @@ public class Sketch extends PApplet {
       for(int intRow = 0; intRow < counter; intRow++) {
       
         intX = 300 + 3 + intRow * 300 / 30;  
-        intY = 3 + intColumn * 300 / 30; 
+        intY = 3 + intColumn * 300 / 30 - 10; 
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
 
       }
-      counter--;
+    counter--;
     }
   }
 
@@ -239,8 +229,22 @@ public class Sketch extends PApplet {
   
   
   public void draw_section8() {
+    int intX = 0;
+    int intY = 0;
+    int counter = 30;
+    for(int intRow = 30; intRow > 0; intRow--) {
+      for (int intColumn = 0; intColumn < counter; intColumn++) {
+        intX = 900 + 3 + intRow * 300 / 30 - 10;  
+        intY = 3 + intColumn * 300 / 30 ; 
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+      counter--;
+    }
   
   }
+
 }
 
   
