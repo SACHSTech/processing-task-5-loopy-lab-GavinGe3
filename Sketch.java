@@ -23,7 +23,6 @@ public class Sketch extends PApplet {
     draw_section2();
     draw_section3();
     draw_section4();
-	  
     draw_section5();
     draw_section6();
     draw_section7();
@@ -161,7 +160,7 @@ public class Sketch extends PApplet {
     int counter = 29;
 
     // Start drawing at top right of section 
-    for(int intColumn = 0; intColumn < 30; intColumn++) {
+    for(int intColumn = 0; intColumn < 31; intColumn++) {
       for(int intRow = 30; intRow > counter; intRow--) {
         intX = 3 + intRow * 300 / 30;  
         intY = 3 + intColumn * 300 / 30; 
