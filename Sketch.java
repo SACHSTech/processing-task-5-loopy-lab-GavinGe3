@@ -164,11 +164,12 @@ public class Sketch extends PApplet {
       for(int intRow = 30; intRow > counter; intRow--) {
         intX = 3 + intRow * 300 / 30;  
         intY = 3 + intColumn * 300 / 30; 
+        
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
       }
-    // Draw one less square for each row
+    // Draw one less square for each subsequent row
     counter--;
     }
   }
@@ -184,11 +185,12 @@ public class Sketch extends PApplet {
       for(int intRow = 0; intRow < counter; intRow++) {
         intX = 300 + 3 + intRow * 300 / 30;  
         intY = 3 + intColumn * 300 / 30 - 10; 
+        
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
       }
-    // Draw one less square for each row
+    // Draw one less square for each subsequent row
     counter--;
     }
   }
@@ -204,11 +206,12 @@ public class Sketch extends PApplet {
       for(int intColumn = 0; intColumn < counter; intColumn++) {
         intX = 600 + 3 + intRow * 300 / 30;  
         intY = 3 + intColumn * 300 / 30; 
+        
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
         }
-      // Draw one less square for each column
+      // Draw one less square for each subsequent column
       counter--;
       }
     }
@@ -224,11 +227,12 @@ public class Sketch extends PApplet {
       for (int intColumnSectEight = 0; intColumnSectEight < counterEight; intColumnSectEight++) {
         intXSectEight = 900 + 3 + intRowSectEight * 300 / 30 - 10;  
         intYSectEight = 3 + intColumnSectEight * 300 / 30 ; 
+        
         fill(255);
         noStroke();
         rect(intXSectEight, intYSectEight, 5, 5);
       }
-      // Draw one less square for each column
+      // Draw one less square for each subsequent column
       counterEight--;
     }
   }
