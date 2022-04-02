@@ -131,19 +131,19 @@ public class Sketch extends PApplet {
     int intX = 0;
     int intY = 0;
     
-    for(int intColumn = 1; intColumn < 31; intColumn++) {
+    for(int intColumn = 0; intColumn < 30; intColumn++) {
       for(int intRow = 0; intRow < 30; intRow++) {
         intX = 900 + 3 + intRow * 300 / 30;  
-        intY = 300 + 3 + (intColumn-1) * 300 / 30;
+        intY = 300 + 3 + intColumn * 300 / 30;
         
-        // Draw white squares if they are on even rows and odd columns 
-        if (intColumn % 2 == 0 && intRow % 2 == 0){
-          fill(255, 255, 255);
+        // Draw black squares on odd rows and even  columns 
+        if (intColumn % 2 == 0 || intRow % 2 != 0){
+          fill(0, 0, 0);
           rect(intX, intY, 5, 5);
         }
-        // draw black squares everywhere else
+        // draw white squares everywhere else
         else {
-          fill(0, 0, 0);
+          fill(255, 255, 255);
           rect(intX, intY, 5, 5);
         }
       }
