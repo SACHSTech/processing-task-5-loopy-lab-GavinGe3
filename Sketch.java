@@ -153,14 +153,14 @@ public class Sketch extends PApplet {
    * Do NOT use 'if' statements to complete 5-8. Manipulate the loops instead
    */
   public void draw_section5(){
-    // Initiate x, y and intCounter variables
+    // Initiate x, y and intSquareCounter variables
     int intX = 0;
     int intY = 0;
     int intSquareCounter = 29;
 
     // Start drawing at top right of section 
     for(int intColumn = 0; intColumn < 31; intColumn++) {
-      for(int intRow = 30; intRow > intCounter; intRow--) {
+      for(int intRow = 30; intRow > intSquareCounter; intRow--) {
         intX = 3 + intRow * 300 / 30;  
         intY = 3 + intColumn * 300 / 30; 
         
@@ -174,14 +174,14 @@ public class Sketch extends PApplet {
   }
   public void draw_section6(){
 
-    // Initiate x, y and intCounter variables
+    // Initiate x, y and intSquareCounter variables
     int intX = 0;
     int intY = 0;
     int intSquareCounter = 30;
 
     // Start drawing at bottom left of section
     for(int intColumn = 30; intColumn > 0; intColumn--) {
-      for(int intRow = 0; intRow < intCounter; intRow++) {
+      for(int intRow = 0; intRow < intSquareCounter; intRow++) {
         intX = 300 + 3 + intRow * 300 / 30;  
         intY = 3 + intColumn * 300 / 30 - 10; 
         
@@ -195,14 +195,14 @@ public class Sketch extends PApplet {
   }
 
   public void draw_section7() {
-    // Initiate x, y and intCounter variables
+    // Initiate x, y and intSquareCounter variables
     int intX = 0;
     int intY = 0;
     int intSquareCounter = 30;
 
     // start drawing at top left of section towards the right
     for(int intRow = 0; intRow < 30; intRow++) {
-      for(int intColumn = 0; intColumn < intCounter; intColumn++) {
+      for(int intColumn = 0; intColumn < intSquareCounter; intColumn++) {
         intX = 600 + 3 + intRow * 300 / 30;  
         intY = 3 + intColumn * 300 / 30; 
         
@@ -216,14 +216,14 @@ public class Sketch extends PApplet {
     }
 
   public void draw_section8() {
-    // Initiate x, y and intCounter variables
+    // Initiate x, y and intSquareCounter variables
     int intXSectEight = 0;
     int intYSectEight = 0;
-    int intCounterEight = 30;
+    int intSquareCounterEight = 30;
 
     // Start drawing at top right of screen towards the left
     for(int intRowSectEight = 30; intRowSectEight > 0; intRowSectEight--) {
-      for (int intColumnSectEight = 0; intColumnSectEight < intCounterEight; intColumnSectEight++) {
+      for (int intColumnSectEight = 0; intColumnSectEight < intSquareCounterEight; intColumnSectEight++) {
         intXSectEight = 900 + 3 + intRowSectEight * 300 / 30 - 10;  
         intYSectEight = 3 + intColumnSectEight * 300 / 30 ; 
         
@@ -232,7 +232,7 @@ public class Sketch extends PApplet {
         rect(intXSectEight, intYSectEight, 5, 5);
       }
       // Draw one less square for each subsequent column
-      intCounterEight--;
+      intSquareCounterEight--;
     }
   }
 }
