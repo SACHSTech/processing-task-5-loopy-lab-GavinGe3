@@ -1,52 +1,32 @@
 import processing.core.PApplet;
 
+/*
+* Description: A program that draws patterns of squares in 8 different sections
+* Author: G. Ge
+*/
 public class Sketch extends PApplet {
 	
 	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
   public void settings() {
-	// put your size call here
     size(1200, 600);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
   public void setup() {
     background(45, 150, 207);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
-	  
-	// sample code, delete this stuff
-    /*
-    stroke(128);
-    line(150, 25, 270, 350);  
 
-    stroke(255);
-    line(50, 125, 70, 50);  
-*/
     draw_section_outlines();
     draw_section1();
     draw_section2();
     draw_section3();
     draw_section4();
-	  
     draw_section5();
     draw_section6();
     draw_section7();
     draw_section8();
-
-    
   }
-
-
   /**
    * Draw the outlines for all sections
    */
@@ -66,7 +46,6 @@ public class Sketch extends PApplet {
     rect(600, 0, 300, 300);
     rect(900, 0, 300, 300);
   }
-  
   /**
    * draws the bottom left section
    */
@@ -74,15 +53,15 @@ public class Sketch extends PApplet {
     int intX = 0;
     int intY = 0;
 
+    // Draw 30 by 30 squares
     for(int intRow = 0; intRow < 30; intRow++){
       for(int intColumn = 0; intColumn < 30; intColumn++){
-        intX = 3 + 0;  //Instead of zero, calculate the proper intX location using 'intRow'
-        intY = 300 + 3 + 0; //Instead of zero, calculate the proper intY location using 'intColumn'
-
+        intX = 3 + intRow * 300 / 30;  
+        intY = 300 + 3 + intColumn * 300 / 30; 
+        
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
-
       }
     }
   }
@@ -91,47 +70,181 @@ public class Sketch extends PApplet {
    * Use the modulus operator and an if statement to select the color
    * Don't loop from 30 to 60 to shift everything over, just add 300 to x.
    */
-  public void draw_section2(){
 
+  public void draw_section2(){
+    int intX = 0;
+    int intY = 0;
+
+    // Draw alternating black and white columns of squares
+    for(int intColumn = 0; intColumn < 30; intColumn++) {
+      for(int intRow = 0; intRow < 30; intRow++) {
+        intX = 300 + 3 + intRow * 300 / 30;  
+        intY = 300 + 3 + intColumn * 300 / 30;
+        
+        // if even column draw black squares if odd column draw white squares
+        if (intRow % 2 == 0){
+          fill(255, 255, 255);
+          rect(intX, intY, 5, 5);
+        }
+        else {
+          fill(0, 0, 0);
+          rect(intX, intY, 5, 5);
+        }
+      }
+    }
   }
 
   /**
    * Use the modulus operator and an if/else statement to select the color.
    * Don't use multiple 'if' statements.
    */
-  public void draw_section3(){
 
+  public void draw_section3(){
+    int intX = 0;
+    int intY = 0;
+    
+    // Draw alternating black and white rows of squares
+    for(int intColumn = 0; intColumn < 30; intColumn++) {
+      for(int intRow = 0; intRow < 30; intRow++) {
+        intX = 600 + 3 + intRow * 300 / 30;  
+        intY = 300 + 3 + intColumn * 300 / 30;
+        
+        // if even rows draw white squares if odd rows draw white squares
+        if (intColumn % 2 == 0){
+          fill(0, 0, 0);
+          rect(intX, intY, 5, 5);
+        }
+        else {
+          fill(255, 255, 255);
+          rect(intX, intY, 5, 5);
+        }
+      }
+    }
   }
 
   /**
    * Use the modulus operator and just one 'if' statement to select the color.
    */
   public void draw_section4(){
-
+    // Decare X and Y coordinate variables for squares
+    int intX = 0;
+    int intY = 0;
+    
+    for(int intColumn = 0; intColumn < 30; intColumn++) {
+      for(int intRow = 0; intRow < 30; intRow++) {
+        intX = 900 + 3 + intRow * 300 / 30;  
+        intY = 300 + 3 + intColumn * 300 / 30;
+        
+        // Draw black squares on odd rows and even  columns 
+        if (intColumn % 2 == 0 || intRow % 2 != 0){
+          fill(0, 0, 0);
+          rect(intX, intY, 5, 5);
+        }
+        // draw white squares everywhere else
+        else {
+          fill(255, 255, 255);
+          rect(intX, intY, 5, 5);
+        }
+      }
+    }
   }
 
   /**
    * Do NOT use 'if' statements to complete 5-8. Manipulate the loops instead
    */
   public void draw_section5(){
+    // Initiate x, y and intSquareCounter variables
+    int intX = 0;
+    int intY = 0;
+    int intSquareCounter = 29;
 
+    // Start drawing at top right of section 
+    for(int intColumn = 0; intColumn < 31; intColumn++) {
+      for(int intRow = 30; intRow > intSquareCounter; intRow--) {
+        intX = 3 + intRow * 300 / 30;  
+        intY = 3 + intColumn * 300 / 30; 
+        
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    // Draw one less square for each subsequent row
+    intSquareCounter--;
+    }
   }
-
   public void draw_section6(){
 
+    // Initiate x, y and intSquareCounter variables
+    int intX = 0;
+    int intY = 0;
+    int intSquareCounter = 30;
+
+    // Start drawing at bottom left of section
+    for(int intColumn = 30; intColumn > 0; intColumn--) {
+      for(int intRow = 0; intRow < intSquareCounter; intRow++) {
+        intX = 300 + 3 + intRow * 300 / 30;  
+        intY = 3 + intColumn * 300 / 30 - 10; 
+        
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+      }
+    // Draw one less square for each subsequent row
+    intSquareCounter--;
+    }
   }
 
-  public void draw_section7(){
+  public void draw_section7() {
+    // Initiate x, y and intSquareCounter variables
+    int intX = 0;
+    int intY = 0;
+    int intSquareCounter = 30;
 
+    // start drawing at top left of section towards the right
+    for(int intRow = 0; intRow < 30; intRow++) {
+      for(int intColumn = 0; intColumn < intSquareCounter; intColumn++) {
+        intX = 600 + 3 + intRow * 300 / 30;  
+        intY = 3 + intColumn * 300 / 30; 
+        
+        fill(255);
+        noStroke();
+        rect(intX, intY, 5, 5);
+        }
+      // Draw one less square for each subsequent column
+      intSquareCounter--;
+      }
+    }
+
+  public void draw_section8() {
+    // Initiate x, y and intSquareCounter variables
+    int intXSectEight = 0;
+    int intYSectEight = 0;
+    int intSquareCounterEight = 30;
+
+    // Start drawing at top right of screen towards the left
+    for(int intRowSectEight = 30; intRowSectEight > 0; intRowSectEight--) {
+      for (int intColumnSectEight = 0; intColumnSectEight < intSquareCounterEight; intColumnSectEight++) {
+        intXSectEight = 900 + 3 + intRowSectEight * 300 / 30 - 10;  
+        intYSectEight = 3 + intColumnSectEight * 300 / 30 ; 
+        
+        fill(255);
+        noStroke();
+        rect(intXSectEight, intYSectEight, 5, 5);
+      }
+      // Draw one less square for each subsequent column
+      intSquareCounterEight--;
+    }
   }
-  
-  public void draw_section8(){
-
-  }
-
-
-
-
-
-
 }
+
+  
+
+
+  
+
+
+
+
+
+
+
